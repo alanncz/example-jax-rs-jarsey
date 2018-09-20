@@ -23,6 +23,8 @@ public class ClientApp {
         User user = new User(name, imageLink);
         Client client = Client.create(new DefaultClientConfig());
         WebResource webResource = client.resource("http://localhost:8080/teste");
+        String texto = webResource.type(MediaType.APPLICATION_JSON).get(String.class);
+        System.out.println(texto);
         webResource.type(MediaType.APPLICATION_XML).post(user);
 
     }
