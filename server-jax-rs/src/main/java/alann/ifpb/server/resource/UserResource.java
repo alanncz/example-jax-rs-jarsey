@@ -45,7 +45,7 @@ public class UserResource {
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, user.getName());
             ps.setString(2, user.getImageLink());
-            ps.execute();
+            System.out.println(ps.executeUpdate());
         }
     }
 

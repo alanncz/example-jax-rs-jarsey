@@ -8,6 +8,7 @@ package alann.ifpb.client.jax.rs;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import java.io.IOException;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -16,7 +17,7 @@ import javax.ws.rs.core.MediaType;
  */
 public class ClientApp {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws IOException  {
 
         String name = "Alann";
         String imageLink = "https://www.comboinfinito.com.br/principal/wp-content/uploads/2017/04/goku-dragon-ball.jpg";
@@ -26,6 +27,7 @@ public class ClientApp {
         String texto = webResource.type(MediaType.APPLICATION_JSON).get(String.class);
         System.out.println(texto);
         webResource.type(MediaType.APPLICATION_XML).post(user);
+        System.in.read();
 
     }
 

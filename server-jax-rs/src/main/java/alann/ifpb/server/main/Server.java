@@ -22,7 +22,7 @@ public class Server {
     
     public static void main(String args []) throws IOException, URISyntaxException{
         ResourceConfig config = new ResourceConfig().packages("alann.ifpb.server.resource");
-        URI uri = new URI("http://localhost:8080/");
+        URI uri = new URI("http://0.0.0.0:8080/");
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(uri, config);
         System.out.println("servidor rodando...");
         System.in.read();
